@@ -64,7 +64,7 @@ export const TextInputSizes: Story = {
   render: (args) => (
     <div>
       {[ "small", "medium", "large" ].map((size) => (
-        <TextInput {...args} inputSize={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
+        <TextInput {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} text input`} />
       ))}
     </div>
   ),
@@ -76,8 +76,8 @@ export const TextInputWithIcon: Story = {
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((type) => (
-        <TextInput {...args} inputSize={type as 'small' | 'medium' | 'large'} label={`${type} text input`} />
+      {[ "small", "medium", "large" ].map((size) => (
+        <TextInput {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} text input`} />
       ))}
     </div>
   ),

@@ -22,7 +22,7 @@
 .oct-text-input__label {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    color: var(--orange-700);
+    color: var(--gray-600);
     font-weight: 500;
     font-size: 0.85em;
 }
@@ -32,7 +32,6 @@
     width: 0px;
     height: 0px;
 }
-
 
 
 .oct-text-input__icon {
@@ -58,9 +57,9 @@
     font-size: 1em;
     border: 0px;
     color: inherit;
-    color: var(--gray-600);
-    background-color: var(--gray-100);
-    border: 0px;
+    color: var(--body-font-color);
+    background: transparent;
+    border: 1px solid var(--orange-500);
     border-radius: 0.75em;
     font-weight: 500;
     padding: 0px 1cap;
@@ -80,7 +79,11 @@
 
 @media (prefers-color-scheme: dark) {
     .oct-text-input__label {
-        color: var(--orange-200);
+        color: var(--gray-200);
+    }
+
+    .oct-text-input__input {
+        color: var(--gray-100);
     }
 
     .oct-text-input__error-message {

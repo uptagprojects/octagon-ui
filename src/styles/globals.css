@@ -80,7 +80,7 @@
   --primary-color: var(--orange-500);
   --secondary-color: var(--cyan-500);
   --accent-color: var(--magenta-500);
-  --body-background-color: var(--orange-100);
+  --body-background-color: var(--gray-100);
   --body-body-font-color: var(--orange-900);
 
   color-scheme: light dark;
