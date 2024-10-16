@@ -1,0 +1,129 @@
+.oct-button {
+    font-size: var(--size-3);
+    --button-primary-stroke-width: calc(1em / 6);
+    --button-secondary-stroke-width: 1px;
+    --button-hover-shadow-color: var(--orange-300);
+    --button-border-radius: 0.75em;
+    padding: calc(1em / 3) 2em;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: calc(1em / 2);
+    margin: 1cap;
+
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 2em;
+    border-radius: var(--button-border-radius);
+
+    border: 0px;
+    box-sizing: padding-box;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    color: var(--orange-500);
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-button {
+        --button-hover-shadow-color: var(--magenta-600);
+    }
+}
+
+.oct-button:hover, .oct-button:focus {
+    filter: drop-shadow(0px 1px 8px var(--button-hover-shadow-color));
+}
+
+.oct-button--primary {
+    position: relative;
+    display: inline-flex;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--size-3);
+    border: 0px;
+    color: light-dark(var(--orange-900), var(--gray-100));
+    background-clip: padding-box;
+    background: transparent;
+    box-sizing: padding-box;
+}
+
+.oct-button.oct-button--primary::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--button-primary-stroke-width) * -1);
+    right: calc(var(--button-primary-stroke-width) * -1);
+    bottom: calc(var(--button-primary-stroke-width) * -1);
+    left: calc(var(--button-primary-stroke-width) * -1);
+    z-index: -1;
+    display: block;
+    background-image: var(--sunset-gradient);
+    border-radius: inherit;
+}
+
+.oct-button.oct-button--primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 1;
+    background-color: var(--gray-100);
+    border-radius: calc(var(--button-border-radius) - var(--button-primary-stroke-width));
+    transition: all 0.3s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-button.oct-button--primary::after {
+      background-color: var(--gray-900);
+    }
+}
+
+.oct-button--primary:hover, .oct-button--primary:focus {
+    color: var(--gray-100);
+}
+
+.oct-button--primary:hover:after, .oct-button--primary:focus:after {
+    background: transparent;
+    color: #fff;
+}
+
+.oct-button.oct-button--secondary {
+    border-color: var(--orange-500);
+    border-width: var(--button-secondary-stroke-width);
+    border-style: solid;
+    color: light-dark(var(--orange-500), var(--gray-100));
+}
+
+.oct-button--secondary:hover, .oct-button--secondary:focus {
+    color: var(--gray-100);
+    background-color: var(--orange-500);
+}
+
+.oct-button--tertiary {
+    color: light-dark(var(--orange-500), var(--gray-100));
+    background-color: transparent;
+}
+
+.oct-button--tertiary:hover, .oct-button--tertiary:focus {
+    color: var(--gray-100);
+    background-color: var(--orange-400);
+}
+
+.oct-button > svg {
+    align-self: center;
+}
+
+.oct-button--medium {
+    font-size: var(--size-4);
+}
+
+.oct-button--large {
+    font-size: var(--size-6);
+}
+
+.oct-button--block {
+    width: 100%;
+}

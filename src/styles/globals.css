@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400..900&family=Open+Sans:wght@400..800&display=swap');
+
+:root {
+  /* Typography */
+  --font-display: "Lexend";
+  --font-body: "Open Sans";
+  --font-mono: "Fira Code";
+
+
+  --border-radius: 0.5rem;
+
+  /* Color Foundations */
+  --gray-hue: 52.41;
+  --gray-chroma: 0;
+  --orange-hue: 52.41;
+  --orange-chroma: 0.137;
+  --cyan-hue: 268.22;
+  --cyan-chroma: 0.085;
+  --magenta-hue: 351.06;
+  --magenta-chroma: 0.141;
+
+  /* Gray */
+  --gray-100: oklch(94.91% var(--gray-chroma) var(--gray-hue));
+  --gray-200: oklch(84.52% var(--gray-chroma) var(--gray-hue));
+  --gray-300: oklch(72.52% var(--gray-chroma) var(--gray-hue));
+  --gray-400: oklch(59.99% var(--gray-chroma) var(--gray-hue));
+  --gray-500: oklch(46.40% var(--gray-chroma) var(--gray-hue));
+  --gray-600: oklch(39.42% var(--gray-chroma) var(--gray-hue));
+  --gray-700: oklch(32.11% var(--gray-chroma) var(--gray-hue));
+  --gray-800: oklch(24.35% var(--gray-chroma) var(--gray-hue));
+  --gray-900: oklch(15.91% var(--gray-chroma) var(--gray-hue));
+
+  /* Orange */
+  --orange-100: oklch(98.59% var(--orange-chroma) var(--orange-hue));
+  --orange-200: oklch(91.46% var(--orange-chroma) var(--orange-hue));
+  --orange-300: oklch(84.33% var(--orange-chroma) var(--orange-hue));
+  --orange-400: oklch(76.90% var(--orange-chroma) var(--orange-hue));
+  --orange-500: oklch(69.47% var(--orange-chroma) var(--orange-hue));
+  --orange-600: oklch(59.35% var(--orange-chroma) var(--orange-hue));
+  --orange-700: oklch(49.24% var(--orange-chroma) var(--orange-hue));
+  --orange-800: oklch(34.45% var(--orange-chroma) var(--orange-hue));
+  --orange-900: oklch(19.65% var(--orange-chroma) var(--orange-hue));
+
+  /* Cyan */
+  --cyan-100: oklch(82.64% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-200: oklch(75.70% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-300: oklch(68.75% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-400: oklch(61.80% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-500: oklch(54.85% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-600: oklch(44.29% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-700: oklch(33.74% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-800: oklch(23.19% var(--cyan-chroma) var(--cyan-hue));
+  --cyan-900: oklch(12.64% var(--cyan-chroma) var(--cyan-hue));
+
+  /* Magenta */
+  --magenta-100: oklch(88.88% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-200: oklch(81.38% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-300: oklch(73.88% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-400: oklch(66.38% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-500: oklch(58.88% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-600: oklch(51.38% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-700: oklch(43.88% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-800: oklch(36.38% var(--magenta-chroma) var(--magenta-hue));
+  --magenta-900: oklch(28.88% var(--magenta-chroma) var(--magenta-hue));
+
+  --sunset-gradient-color-1: var(--orange-500);
+  --sunset-gradient-color-2: oklch(65.12% 0.169 19.62);
+  --sunset-gradient-color-3: var(--magenta-500);
+  --sunset-gradient-color-4: oklch(52.11% 0.094 314.16);
+  --sunset-gradient-color-5: var(--cyan-500);
+  --sunset-gradient-color-6: oklch(38.83% 0.041 237.32);
+  --sunset-gradient: radial-gradient(131.84% 131.84% at 88.75% 15%,
+      var(--sunset-gradient-color-1) 19%,
+      var(--sunset-gradient-color-2) 38%,
+      var(--sunset-gradient-color-3) 55%,
+      var(--sunset-gradient-color-4) 70%,
+      var(--sunset-gradient-color-5) 83%,
+      var(--sunset-gradient-color-6));
+  
+  --primary-color: var(--orange-500);
+  --secondary-color: var(--cyan-500);
+  --accent-color: var(--magenta-500);
+  --body-background-color: var(--orange-100);
+  --body-body-font-color: var(--orange-900);
+
+  color-scheme: light dark;
+
+
+  /* Size */
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-7: 2rem;
+  --size-8: 2.5rem;
+  --size-9: 3rem;
+  --size-10: 3.5rem;
+  --size-11: 4rem;
+  --size-12: 4.5rem;
+  --size-13: 5rem;
+  --size-14: 6rem;
+  --size-15: 7.5rem;
+  --size-16: 9rem;
+  --size-17: 12rem;
+  --size-18: 16rem;
+  --size-19: 20rem;
+  --size-20: 25rem;
+  --size-21: 30rem;
+  --size-22: 37.5rem;
+  --size-23: 45rem;
+  
+  /* Spacing Scale */
+  --scale-1: var(--size-1);
+  --scale-2: var(--size-2);
+  --scale-3: var(--size-4);
+  --scale-4: var(--size-6);
+  --scale-5: var(--size-7);
+  --scale-6: var(--size-8);
+  --scale-7: var(--size-9);
+  --scale-8: var(--size-10);
+  --scale-9: var(--size-11);
+  --scale-10: var(--size-12);
+  --scale-11: var(--size-13);
+  --scale-12: var(--size-14);
+
+  /* Layout */
+  max-width: 100dvw;
+  min-height: 100dvh;
+  --page-margin: var(--scale-3);
+  --max-content-width: 900px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background-color: var(--gray-900);
+    --body-font-color: var(--primary-100);
+  }
+}
+
+/* sm >= 640px */
+@media screen and (min-width: 640px) {
+  :root {
+    --page-margin: var(--scale-4);
+  }
+}
+
+/* md >= 768px */
+@media screen and (min-width: 768px) {
+  :root {
+    --page-margin: var(--scale-6);
+  }
+}
+
+/* lg >= 1024px */
+@media screen and (min-width: 1024px) {
+  :root {
+    --page-margin: var(--scale-9);
+  }
+}
+
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-font-color);
+  font-family: var(--font-body), sans-serif;
+  container: oct-body / block-size;
+  display: grid;
+  grid-template-columns: min-content [content] minmax(1fr, var(--max-content-width)) min-content;
+  grid-template-rows: [header] 5cap [content]auto [footer]100dvh;
+  gap: var(--page-margin) 0px;
+  place-items: stretch;
+  justify-content: center;
+  align-content: start;
+}
+
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --text-heading-size: 1.25em;
+  font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
+  font-family: var(--font-display);
+
+  .display {
+    --text-heading-size: calc(var(--text-heading-size) * 2);
+    font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
+  }
+}
+
+h1 {
+  --text-heading-size: 2.5rem;
+}
+
+h2 {
+  --text-heading-size: 1.5rem;
+}
+
+h3 {
+  --text-heading-size: 1.25rem;
+}
+
+h4 {
+  --text-heading-size: 1.2rem;
+}
+
+h5 {
+  --text-heading-size: 1rem;
+}
+
+h6 {
+  --text-heading-size: 0.875rem;
+}
+
+
+p,
+caption,
+label,
+figcaption {
+  --text-body-size: 1rem;
+  font-size: clamp(var(--text-body-size), 2vw + var(--text-body-size), calc(var(--text-body-size) * 1.25));
+  font-family: var(--font-body);
+  max-width: 64cap;
+}
+
+code,
+blockquote {
+  --text-code-size: 1.15rem;
+  font-size: clamp(var(--text-code-size), 2vw + var(--text-code-size), calc(var(--text-code-size) * 1.5));
+  font-family: var(--font-mono), monospace;
+}

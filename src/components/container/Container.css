@@ -1,0 +1,21 @@
+.oct-container {
+    padding: var(--scale-6);
+    width: 100%;
+    min-height: 90dvh;
+    box-sizing: border-box;
+    margin: 0px;
+    grid-area: content;
+}
+
+.oct-container--center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@container oct-body (min-width: 640px) {
+    .oct-container {
+        padding: var(--scale-8);
+    }
+}
