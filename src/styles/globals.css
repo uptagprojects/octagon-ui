@@ -186,6 +186,7 @@ h6 {
   --text-heading-size: 1.25em;
   font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
   font-family: var(--font-display);
+  line-height: 1.5em;
 
   .display {
     --text-heading-size: calc(var(--text-heading-size) * 2);
@@ -222,10 +223,11 @@ p,
 caption,
 label,
 figcaption {
-  --text-body-size: 1rem;
+  --text-body-size: var(--size-3);
   font-size: clamp(var(--text-body-size), 2vw + var(--text-body-size), calc(var(--text-body-size) * 1.25));
   font-family: var(--font-body);
   max-width: 64cap;
+  line-height: 1.75em;
 }
 
 code,

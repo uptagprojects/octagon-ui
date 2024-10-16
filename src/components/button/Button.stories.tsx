@@ -50,8 +50,8 @@ export const ButtonSizes: Story = {
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((type) => (
-        <Button {...args} size={type as 'small' | 'medium' | 'large'} label={`${type} button`} />
+      {[ "small", "medium", "large" ].map((size) => (
+        <Button {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
       ))}
     </div>
   ),
@@ -63,8 +63,8 @@ export const ButtonWithIcon: Story = {
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((type) => (
-        <Button {...args} size={type as 'small' | 'medium' | 'large'} label={`${type} button`} />
+      {[ "small", "medium", "large" ].map((size) => (
+        <Button {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
       ))}
     </div>
   ),
