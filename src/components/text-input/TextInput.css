@@ -7,10 +7,6 @@
     margin-bottom: var(--scale-3);
 }
 
-.oct-text-input--block {
-    width: 100%;
-}
-
 .oct-text-input--medium {
     font-size: var(--size-4);
 }
@@ -55,8 +51,6 @@
     grid-row: 2 / 3;
     line-height: 1.5em;
     font-size: 1em;
-    border: 0px;
-    color: inherit;
     color: var(--body-font-color);
     background: transparent;
     border: 1px solid var(--orange-500);

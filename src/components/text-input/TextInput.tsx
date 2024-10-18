@@ -5,14 +5,14 @@ import "./TextInput.css";
 interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
     errorMessage?: string;
     icon?: keyof typeof icons;
-    type?: "text" | "email" | "password";
+    type?: "search" | "text" | "email" | "password";
     size?: 'small' | 'medium' | 'large';
     hideLabel?: boolean;
     label: string;
 }
 
 
-const TextInput: FC<TextInputProps> = ({ errorMessage, icon, type="text", size="medium", hideLabel=false, disabled=false, ...props }) => {
+const TextInput: FC<TextInputProps> = ({ errorMessage, icon, type="text", size="medium", hideLabel=false, disabled=false, className="", ...props }) => {
     const inputId = useMemo(() => globalThis.crypto.randomUUID(), []);
     const LucideIcon = icons[icon as keyof typeof icons];
     return (
@@ -21,7 +21,7 @@ const TextInput: FC<TextInputProps> = ({ errorMessage, icon, type="text", size="
             <input
                 id={inputId}
                 type={type}
-                className={`oct-text-input__input ${errorMessage ? 'error' : ''}`} 
+                className={`oct-text-input__input ${errorMessage ? 'error' : ''} ${className}`} 
                 disabled={disabled} 
                 {...props}
             />
