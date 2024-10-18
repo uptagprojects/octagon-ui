@@ -1,6 +1,6 @@
 {
   "name": "octagon-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A modern and flexible UI for the PNFi UPTAG",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
