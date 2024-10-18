@@ -15,11 +15,11 @@ export const Default: Story = {
     args: {},
     render: () => (
         <Navbar brand={
-                <h2><a href="#">Logo</a></h2>
-            }>
-                <NavItem><a href='#'>Docs</a></NavItem>
-                <NavItem active={true}><a href="#">Guide</a></NavItem>
-            </Navbar>
+            <h2><a href="#">Logo</a></h2>
+        }>
+            <NavItem><a href='#'>Docs</a></NavItem>
+            <NavItem active={true}><a href="#">Guide</a></NavItem>
+        </Navbar>
     )
 };
 
