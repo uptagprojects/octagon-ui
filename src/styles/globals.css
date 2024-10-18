@@ -80,7 +80,7 @@
   --primary-color: var(--orange-500);
   --secondary-color: var(--cyan-500);
   --accent-color: var(--magenta-500);
-  --body-background-color: var(--orange-100);
+  --body-background-color: var(--gray-100);
   --body-body-font-color: var(--orange-900);
 
   color-scheme: light dark;
@@ -126,8 +126,6 @@
   --scale-12: var(--size-14);
 
   /* Layout */
-  max-width: 100dvw;
-  min-height: 100dvh;
   --page-margin: var(--scale-3);
   --max-content-width: 900px;
 }
@@ -163,17 +161,29 @@
 
 
 body {
+  max-width: 100dvw;
+  min-height: 100dvh;
+  margin: 0px;
   background-color: var(--body-background-color);
   color: var(--body-font-color);
   font-family: var(--font-body), sans-serif;
-  container: oct-body / block-size;
+  container: oct-body / inline-size;
   display: grid;
-  grid-template-columns: min-content [content] minmax(1fr, var(--max-content-width)) min-content;
-  grid-template-rows: [header] 5cap [content]auto [footer]100dvh;
-  gap: var(--page-margin) 0px;
+  grid-template-columns: auto clamp(320px, 100%, var(--max-content-width)) auto;
+  grid-template-rows: 6cap auto 50dvh;
+  grid-template-areas: 
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  gap: 0px var(--page-margin);
   place-items: stretch;
-  justify-content: center;
-  align-content: start;
+  justify-content: stretch;
+  justify-items: stretch;
+  align-content: stretch;
+}
+
+main {
+  grid-area: main;
 }
 
 header,
@@ -186,6 +196,7 @@ h6 {
   --text-heading-size: 1.25em;
   font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
   font-family: var(--font-display);
+  line-height: 1.5em;
 
   .display {
     --text-heading-size: calc(var(--text-heading-size) * 2);
@@ -222,10 +233,11 @@ p,
 caption,
 label,
 figcaption {
-  --text-body-size: 1rem;
+  --text-body-size: var(--size-3);
   font-size: clamp(var(--text-body-size), 2vw + var(--text-body-size), calc(var(--text-body-size) * 1.25));
   font-family: var(--font-body);
   max-width: 64cap;
+  line-height: 1.75em;
 }
 
 code,

@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     gap: calc(1em / 2);
-    margin: 1cap;
 
     font-family: var(--font-display);
     font-weight: 500;
@@ -20,7 +19,7 @@
     border: 0px;
     box-sizing: padding-box;
     background-color: transparent;
-    transition: all 0.3s linear;
+    transition: all 0.3s ease-in-out;
     color: var(--orange-500);
 }
 
@@ -31,7 +30,7 @@
 }
 
 .oct-button:hover, .oct-button:focus {
-    filter: drop-shadow(0px 1px 8px var(--button-hover-shadow-color));
+    box-shadow: 0px 1px 12px var(--button-hover-shadow-color);
 }
 
 .oct-button--primary {
@@ -41,7 +40,7 @@
     font-weight: 500;
     font-size: var(--size-3);
     border: 0px;
-    color: light-dark(var(--orange-900), var(--gray-100));
+    color: var(--orange-900);
     background-clip: padding-box;
     background: transparent;
     box-sizing: padding-box;
@@ -76,16 +75,20 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    .oct-button--primary {
+        color: var(--gray-100);
+    }
+
     .oct-button.oct-button--primary::after {
       background-color: var(--gray-900);
     }
 }
 
-.oct-button--primary:hover, .oct-button--primary:focus {
+.oct-button--primary:hover {
     color: var(--gray-100);
 }
 
-.oct-button--primary:hover:after, .oct-button--primary:focus:after {
+.oct-button--primary:hover:after {
     background: transparent;
     color: #fff;
 }
@@ -94,20 +97,30 @@
     border-color: var(--orange-500);
     border-width: var(--button-secondary-stroke-width);
     border-style: solid;
-    color: light-dark(var(--orange-500), var(--gray-100));
+    color: var(--orange-500);
 }
 
-.oct-button--secondary:hover, .oct-button--secondary:focus {
+.oct-button--secondary:hover  {
     color: var(--gray-100);
     background-color: var(--orange-500);
 }
 
 .oct-button--tertiary {
-    color: light-dark(var(--orange-500), var(--gray-100));
+    color: var(--orange-500);
     background-color: transparent;
 }
 
-.oct-button--tertiary:hover, .oct-button--tertiary:focus {
+@media (prefers-color-scheme: dark) {
+    .oct-button--secondary {
+        color: var(--gray-100);
+    }
+
+    .oct-button--tertiary {
+        color: var(--gray-100);
+    }
+}
+
+.oct-button--tertiary:hover {
     color: var(--gray-100);
     background-color: var(--orange-400);
 }

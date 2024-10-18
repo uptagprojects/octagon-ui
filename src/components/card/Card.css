@@ -1,0 +1,93 @@
+.oct-card {
+    --box-shadow-alpha: 0.15;
+    background-color: var(--body-background-color);
+    border-radius: 1em;
+    box-shadow: 0 4px 6px oklch(50% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    min-width: 24cap;
+    max-width: 48cap;
+    margin: 4vmin;
+}
+
+.oct-card:hover {
+    box-shadow: 0 8px 12px oklch(30% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-card {
+        --box-shadow-alpha: 0.25;
+        box-shadow: 0 4px 6px oklch(30% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+    }
+}
+
+.oct-card__image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.oct-card--landscape .oct-card__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.oct-card--square .oct-card__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.oct-card--portrait .oct-card__image img {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.oct-card__content {
+    padding: var(--scale-5);
+}
+
+.oct-card__header {
+    margin: 0px;
+    width: 100%;
+}
+
+.oct-card__header .oct-card__title {
+    font-size: var(--size-6);
+    font-weight: 600;
+    line-height: var(--size-6);
+    vertical-align: baseline;
+    color: var(--cyan-900);
+    margin: 0px;
+}
+
+.oct-card__header .oct-card__subtitle {
+    font-size: var(--size-4);
+    font-weight: 400;
+    line-height: var(--size-6);
+    vertical-align: text-top;
+    color: var(--cyan-500);
+    margin: 0px;
+}
+
+.oct-card__content {
+    font-size: var(--size-3);
+    color: var(--gray-400);
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-card__header .oct-card__title  {
+        color: var(--cyan-300);
+    }
+
+    .oct-card__header .oct-card__subtitle  {
+        color: var(--magenta-600);
+    }
+
+    .oct-card__content {
+        color: var(--cyan-300);
+    }
+}

@@ -5,10 +5,10 @@ interface ContainerProps {
     center?: boolean;
 }
 
-const Container: FC<ContainerProps> = ({ children, center = false }) => {
-    return <section className={`oct-container ${center ? "oct-container--center" : ""}`}>
+const Container: FC<ContainerProps> = ({ children, center = false }) => (
+    <section className={`oct-container ${center ? "oct-container--center" : ""}`}>
         {children}
-    </section>;
-};
+    </section>
+);
 
 export default Container;

@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    type: {
+    variant: {
       options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'select' }
     },
@@ -37,8 +37,8 @@ export const ButtonTypes: Story = {
   },
   render: (args) => (
     <div>
-      {[ 'primary', 'secondary', 'tertiary' ].map((type) => (
-        <Button {...args} type={type as 'primary' | 'secondary' | 'tertiary'} label={`${type} button`} />
+      {[ 'primary', 'secondary', 'tertiary' ].map((variant) => (
+        <Button {...args} variant={variant as 'primary' | 'secondary' | 'tertiary'} label={`${variant} button`} />
       ))}
     </div>
   ),
@@ -46,12 +46,12 @@ export const ButtonTypes: Story = {
 
 export const ButtonSizes: Story = {
   args: {
-    type: 'primary',
+    variant: 'primary',
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((type) => (
-        <Button {...args} size={type as 'small' | 'medium' | 'large'} label={`${type} button`} />
+      {[ "small", "medium", "large" ].map((size) => (
+        <Button {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
       ))}
     </div>
   ),
@@ -59,12 +59,12 @@ export const ButtonSizes: Story = {
 
 export const ButtonWithIcon: Story = {
   args: {
-    icon: 'Activity',
+    icon: 'Archive',
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((type) => (
-        <Button {...args} size={type as 'small' | 'medium' | 'large'} label={`${type} button`} />
+      {[ "small", "medium", "large" ].map((size) => (
+        <Button {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
       ))}
     </div>
   ),
