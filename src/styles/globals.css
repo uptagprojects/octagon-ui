@@ -186,6 +186,10 @@ main {
   grid-area: main;
 }
 
+body > footer {
+  grid-area: footer;
+}
+
 header,
 h1,
 h2,
@@ -197,6 +201,7 @@ h6 {
   font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
   font-family: var(--font-display);
   line-height: 1.5em;
+  font-weight: 500;
 
   .display {
     --text-heading-size: calc(var(--text-heading-size) * 2);
