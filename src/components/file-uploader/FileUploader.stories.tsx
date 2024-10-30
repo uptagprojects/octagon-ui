@@ -11,9 +11,6 @@ const meta: Meta<typeof FileUploader> = {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' }
     },
-    hideLabel: {
-      control: { type: 'boolean' }
-    },
     disabled: {
         control: { type: 'boolean' }
     }
@@ -27,5 +24,6 @@ type Story = StoryObj<typeof FileUploader>;
  
 export const Default: Story = {
   args: {
+    label: 'Upload file'
   }
 };

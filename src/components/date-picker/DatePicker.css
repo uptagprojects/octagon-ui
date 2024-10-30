@@ -1,10 +1,5 @@
 .oct-date-picker {
-}
-
-.oct-date-picker--medium {
-}
-
-.oct-date-picker--large {
+    width: 100%;
 }
 
 .oct-date-picker__calendar {

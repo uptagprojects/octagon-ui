@@ -216,11 +216,12 @@ h6 {
   font-family: var(--font-display);
   line-height: 1.5em;
   font-weight: 500;
+  margin: 0px;
+}
 
-  .display {
-    --text-heading-size: calc(var(--text-heading-size) * 2);
-    font-size: clamp(var(--text-heading-size), 4vw + var(--text-heading-size), calc(var(--text-heading-size) * 1.5));
-  }
+.display {
+  --text-heading-size: calc(var(--text-heading-size) * 2);
+  font-size: clamp(var(--text-heading-size), calc(4vw + var(--text-heading-size)), calc(var(--text-heading-size) * 1.5));
 }
 
 h1 {

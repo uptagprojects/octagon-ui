@@ -1,0 +1,38 @@
+.oct-modal {
+    --shadow-color: var(--orange-100);
+    max-width: 80dvw;
+    max-height: 80dvh;
+    border: 0px;
+    background-color: var(--body-background-color);
+    bottom: 0px;
+    box-shadow: 0px 4px 16px var(--shadow-color);
+    border-radius: var(--border-radius);
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-modal {
+        --shadow-color: var(--magenta-700);
+    }
+}
+
+.oct-modal::backdrop {
+    background: var(--cyan-500);
+    background-blend-mode: darken;
+    backdrop-filter: blur(3px);
+}
+
+.oct-modal__container {
+    padding: var(--scale-3);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: var(--scale-2);
+}
+
+.oct-modal__button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}

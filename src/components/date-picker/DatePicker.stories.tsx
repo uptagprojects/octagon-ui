@@ -7,6 +7,10 @@ export default {
     tags: ['autodocs'],
     component: DatePicker,
     argTypes: {
+        size: {
+            options: ['small', 'medium', 'large'],
+            control: { type: 'select' }
+        },
     }
 } as Meta;
 

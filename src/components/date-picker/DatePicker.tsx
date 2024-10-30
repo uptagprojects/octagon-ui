@@ -7,17 +7,18 @@ import "./DatePicker.css";
 type DatePickerProps = {
     children?: ReactNode;
     label: string;
+    size?: 'small' | 'medium' | 'large';
     hideLabel?: boolean;
 } & ReactDatePickerProps;
 
-const Container: FC<DatePickerProps> = ({ children, className, label, hideLabel, ...props }) => {
+const Container: FC<DatePickerProps> = ({ children, className, label, hideLabel, size, ...props }) => {
     return (
         <ReactDatePicker
             {...props}
             className={`oct-date-picker ${props.selectsRange ? "oct-date-picker--range" : ""}`}
             calendarClassName={`oct-date-picker__calendar`}
             monthsShown={1}
-            customInput={<TextInput icon="Calendar" className={className} label={label} hideLabel={hideLabel} disabled={props.disabled} />}
+            customInput={<TextInput icon="Calendar" className={className} label={label} hideLabel={hideLabel} size={size} disabled={props.disabled} />}
             >
                 {children}
         </ReactDatePicker>
