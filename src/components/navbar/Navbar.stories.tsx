@@ -22,14 +22,3 @@ export const Default: Story = {
         </Navbar>
     )
 };
-
-export const NavbarWithSearch: Story = {
-    args: {},
-    render: () => (
-        <Navbar brand={<h2><a href="#">Logo</a></h2>}
-            hideSearch={false}>
-            <NavItem><a href='#'>Docs</a></NavItem>
-            <NavItem><a href="#">Guide</a></NavItem>
-        </Navbar>
-    )
-};

@@ -1,4 +1,4 @@
-.oct-text-input {
+.oct-select {
     display: grid;
     grid-template-columns: 2.5em auto 2.5em;
     grid-template-rows: 1fr 2.5em min-content;
@@ -7,15 +7,15 @@
     margin-bottom: var(--scale-3);
 }
 
-.oct-text-input--medium {
+.oct-select--medium {
     font-size: var(--size-5);
 }
 
-.oct-text-input--large {
+.oct-select--large {
     font-size: var(--size-7);
 }
 
-.oct-text-input__label {
+.oct-select__label {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
     color: var(--gray-600);
@@ -23,14 +23,14 @@
     font-size: 0.85em;
 }
 
-.oct-text-input--hide-label .oct-text-input__label {
+.oct-select--hide-label .oct-select__label {
     visibility: hidden;
     width: 0px;
     height: 0px;
 }
 
 
-.oct-text-input__icon {
+.oct-select__icon {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     align-self: center;
@@ -42,11 +42,12 @@
     box-sizing: border-box;
 }
 
-.oct-text-input--small .oct-text-input__icon {
+.oct-select--small .oct-select__icon {
     height: 85%;
 }
 
-.oct-text-input__input {
+.oct-select__select {
+    appearance: none;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
     line-height: 1.5em;
@@ -56,14 +57,32 @@
     border: 1px solid var(--orange-500);
     border-radius: 0.75em;
     font-weight: 500;
-    padding: 0px 1cap;
+    padding: 0px 2.5em 0px 1cap;
 }
 
-.oct-text-input--has-icon .oct-text-input__input {
-    padding: 0px 1cap 0px 2.5em;
+
+.oct-select--has-icon .oct-select__select {
+    padding: 0px 2.5em;
 }
 
-.oct-text-input__error-message {
+.oct-select__right-chevron {
+    grid-column: 3 / -1;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 80%;
+    color: var(--gray-300);
+    padding: var(--scale-2);
+    box-sizing: border-box;
+}
+
+.oct-select--small .oct-select__icon {
+    height: 85%;
+}
+
+
+.oct-select__error-message {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
     color: var(--magenta-700);
@@ -72,15 +91,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .oct-text-input__label {
+    .oct-select__label {
         color: var(--gray-200);
     }
 
-    .oct-text-input__input {
+    .oct-select__select {
         color: var(--gray-100);
     }
 
-    .oct-text-input__error-message {
+    .oct-select__error-message {
         color: var(--magenta-300);
     }
 }

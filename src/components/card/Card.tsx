@@ -20,6 +20,7 @@ const Card: React.FC<CardProps> = ({
     aspectRatio = "landscape"
 }) => {
     return (
+        
         <article className={`oct-card oct-card--${size} oct-card--${aspectRatio} ${image ? 'oct-card--image' : ''}`}>
             {image && (
                 <div className="oct-card__image">
