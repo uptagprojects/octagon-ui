@@ -18,6 +18,9 @@ type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
     args: {
         open: true,
+        header: {
+            title: "Modal Title",
+        },
         actionLabel: "Aceptar",
         closeLabel: "Cerrar",
     },

@@ -78,6 +78,8 @@
   "dependencies": {
     "lucide-react": "^0.452.0",
     "react-datepicker": "^7.5.0",
-    "react-dropzone": "^14.2.10"
+    "react-dropzone": "^14.2.10",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
   }
 }
