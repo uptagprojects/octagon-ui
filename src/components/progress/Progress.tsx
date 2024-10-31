@@ -5,6 +5,8 @@ interface ProgressProps extends React.HTMLAttributes<HTMLProgressElement> {
     label: string;
     hideLabel?: boolean;
     size: "small" | "medium" | "large";
+    value?: number;
+    max?: number;
 }
 const Progress: React.FC<ProgressProps> = ({ size="small", label, hideLabel=false, ...props }) => {
     const inputId = useMemo(() => globalThis.crypto.randomUUID(), []);

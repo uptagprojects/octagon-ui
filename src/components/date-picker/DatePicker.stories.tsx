@@ -22,6 +22,7 @@ export const Default: Story = {
     render: (args) => {
         const [startDate, setStartDate] = useState(new Date());
         return (
+            // @ts-ignore
         <DatePicker
             {...args}
             selected={startDate}
