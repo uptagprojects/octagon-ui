@@ -1,5 +1,7 @@
+import { createElement } from "react";
+
 export interface EditorCommand {
-  execute(text: string, selectionStart: number, selectionEnd: number): {
+  execute(text: string, selectionStart: number, selectionEnd: number, extraData?: string): {
     text: string;
     newSelection: { start: number; end: number };
   };
@@ -103,9 +105,9 @@ export class ImageCommand implements EditorCommand {
   label = 'Image';
   icon = 'Image';
 
-  execute(text: string, selectionStart: number, selectionEnd: number) {
+  execute(text: string, selectionStart: number, selectionEnd: number, extraData: string) {
     const selectedText = text.substring(selectionStart, selectionEnd);
-    const newText = `${text.substring(0, selectionStart)}![${selectedText || 'alt text'}](url)${text.substring(selectionEnd)}`;
+    const newText = `${text.substring(0, selectionStart)}![${selectedText || 'alt text'}](${extraData})${text.substring(selectionEnd)}`;
     
     return {
       text: newText,
@@ -115,6 +117,8 @@ export class ImageCommand implements EditorCommand {
       },
     };
   }
+
+
 }
 
 export class CodeBlockCommand implements EditorCommand {
@@ -155,7 +159,7 @@ export class QuoteCommand implements EditorCommand {
 
 export class HorizontalRuleCommand implements EditorCommand {
   label = 'Horizontal Rule';
-  icon = 'Divide';
+  icon = 'SquareSplitVertical';
 
   execute(text: string, selectionStart: number, selectionEnd: number) {
     const marker = '\n---\n';

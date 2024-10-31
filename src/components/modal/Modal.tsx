@@ -6,12 +6,12 @@ import CardFooter from "../card/CardFooter";
 import CardHeader, { CardHeaderProps } from "../card/CardHeader";
 
 interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
-    header: CardHeaderProps,
+    header?: CardHeaderProps,
     children: React.ReactNode;
     open: boolean;
     actionLabel?: string;
     closeLabel?: string;
-    onAction: () => void;
+    onAction?: () => void;
     onClose: () => void;
 }
 
