@@ -14,7 +14,6 @@ import rehypeReact from 'rehype-react';
 import "./MdViewer.css";
 import Container from '../container/Container';
 import Progress from '../progress/Progress';
-import { ErrorBoundary } from 'react-error-boundary';
 import Alert from '../alert/Alert';
 interface MdPreviewProps {
   content: string;
@@ -50,13 +49,11 @@ function useProcessor(text: string) {
 
 const MdViewer: React.FC<MdPreviewProps> = ({ content, loader }) => {
   return (
-    <ErrorBoundary fallback={<Alert type='error' title="No pudimos procesar la información" message="Intente nuevamente" />}>
-      <Suspense fallback={loader ?? <Progress label="cargando" size="large" />}>
-        <Container className="oct-md-viewer">
-          {useProcessor(content)}
-        </Container>
-      </Suspense>
-    </ErrorBoundary>
+    <Suspense fallback={loader ?? <Progress label="cargando" size="large" />}>
+      <Container className="oct-md-viewer">
+        {useProcessor(content)}
+      </Container>
+    </Suspense>
   );
 };
 
