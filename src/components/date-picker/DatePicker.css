@@ -1,0 +1,7 @@
+.oct-date-picker {
+    width: 100%;
+}
+
+.oct-date-picker__calendar {
+    background-color: var(--orange-000);
+}

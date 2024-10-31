@@ -43,7 +43,8 @@
     color: var(--orange-900);
     background-clip: padding-box;
     background: transparent;
-    box-sizing: padding-box;
+    box-sizing: border-box;
+    margin: var(--button-primary-stroke-width);
 }
 
 .oct-button.oct-button--primary::before {
@@ -69,7 +70,7 @@
     z-index: -1;
     display: block;
     opacity: 1;
-    background-color: var(--gray-100);
+    background-color: var(--orange-000);
     border-radius: calc(var(--button-border-radius) - var(--button-primary-stroke-width));
     transition: all 0.3s ease-in-out;
 }
@@ -85,7 +86,7 @@
 }
 
 .oct-button--primary:hover {
-    color: var(--gray-100);
+    color: var(--orange-000);
 }
 
 .oct-button--primary:hover:after {

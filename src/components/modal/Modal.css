@@ -1,0 +1,25 @@
+.oct-modal {
+    --shadow-color: var(--orange-100);
+    border: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+@container oct-body (min-width: 480px) {
+    .oct-modal {
+        max-width: 60dvw;
+        max-height: 60dvh;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-modal {
+        --shadow-color: var(--magenta-700);
+    }
+}
+
+.oct-modal::backdrop {
+    background: var(--cyan-900);
+    background-blend-mode: overlay;
+    backdrop-filter: blur(6px);
+}

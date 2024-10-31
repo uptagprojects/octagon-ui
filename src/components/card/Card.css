@@ -1,23 +1,31 @@
 .oct-card {
-    --box-shadow-alpha: 0.15;
+    --box-shadow-x: var(--scale-2); /* X offset */
+    --box-shadow-y: var(--scale-2);  /* Y offset */
+    --border-radius: 1em;
+    --box-shadow-color: var(--cyan-300);
     background-color: var(--body-background-color);
-    border-radius: 1em;
-    box-shadow: 0 4px 6px oklch(50% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+    border-radius: var(--border-radius);
+    border: 1px solid var(--body-font-color);
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     min-width: 24cap;
-    max-width: 48cap;
-    margin: 4vmin;
+    position: relative;
 }
 
-.oct-card:hover {
-    box-shadow: 0 8px 12px oklch(30% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+@container oct-body (min-width: 480px) {
+    .oct-card {
+        min-width: 32cap;
+    }
+}
+
+.oct-card.oct-card--hoverable:hover {
+    transform: translate(calc(var(--scale-2)), calc(var(--scale-2) * -1));
+    box-shadow: calc(var(--box-shadow-x) * -1) var(--box-shadow-y) 0px var(--box-shadow-color);
 }
 
 @media (prefers-color-scheme: dark) {
-    .oct-card {
-        --box-shadow-alpha: 0.25;
-        box-shadow: 0 4px 6px oklch(30% var(--cyan-chroma) var(--cyan-hue) / var(--box-shadow-alpha));
+    .oct-card.oct-card--hoverable:hover {
+        --box-shadow-color: var(--orange-600);
     }
 }
 
@@ -51,7 +59,7 @@
 }
 
 .oct-card__header {
-    margin: 0px;
+    margin: 0px 0px 1cap 0px;
     width: 100%;
 }
 
@@ -60,7 +68,7 @@
     font-weight: 600;
     line-height: var(--size-6);
     vertical-align: baseline;
-    color: var(--cyan-900);
+    color: var(--orange-700);
     margin: 0px;
 }
 
@@ -69,25 +77,33 @@
     font-weight: 400;
     line-height: var(--size-6);
     vertical-align: text-top;
-    color: var(--cyan-500);
+    color: var(--orange-600);
     margin: 0px;
 }
 
 .oct-card__content {
     font-size: var(--size-3);
-    color: var(--gray-400);
+    color: var(--orange-800);
+}
+
+.oct-card__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
 }
 
 @media (prefers-color-scheme: dark) {
     .oct-card__header .oct-card__title  {
-        color: var(--cyan-300);
+        color: var(--orange-200);
     }
 
     .oct-card__header .oct-card__subtitle  {
-        color: var(--magenta-600);
+        color: var(--gray-200);
     }
 
     .oct-card__content {
-        color: var(--cyan-300);
+        color: var(--orange-000);
     }
 }

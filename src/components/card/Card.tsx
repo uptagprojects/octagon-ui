@@ -2,9 +2,10 @@ import React, { ReactNode } from 'react';
 import "./Card.css";
 
 interface CardProps {
-    size?: "small" | "medium" | "large";
     alt?: string;
+    hover?: boolean;
     children: ReactNode;
+    className?: string;
     image?: string;
     aspectRatio?: "square" | "portrait" | "landscape";
     footer?: ReactNode;
@@ -13,14 +14,15 @@ interface CardProps {
 
 
 const Card: React.FC<CardProps> = ({
-    size = "small",
+    hover = true,
     children,
+    className,
     image,
     alt,
     aspectRatio = "landscape"
 }) => {
     return (
-        <article className={`oct-card oct-card--${size} oct-card--${aspectRatio} ${image ? 'oct-card--image' : ''}`}>
+        <article className={`oct-card oct-card--${aspectRatio} ${hover ? 'oct-card--hoverable' : ''} ${image ? 'oct-card--image' : ''} ${className ?? ''}`}>
             {image && (
                 <div className="oct-card__image">
                     <img src={image} alt={alt || 'Card image'} />

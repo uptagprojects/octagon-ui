@@ -2,9 +2,11 @@
     grid-area: header;
     width: 100%;
     border: 0px;
-    display: subgrid;
+    display: grid;
     background: transparent;
     margin-bottom: var(--scale-3);
+    grid-template-columns: subgrid;
+    grid-template-rows: auto;
 }
 
 .oct-navbar__container {

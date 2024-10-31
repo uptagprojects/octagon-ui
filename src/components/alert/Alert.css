@@ -1,0 +1,103 @@
+.oct-alert {
+    display: flex;
+    padding: var(--scale-4);
+    border-radius: var(--border-radius);
+    background-color: var(--gray-500);
+    color: var(--gray-200);
+    margin-bottom: 1em;
+}
+
+.oct-alert__summary {
+    position: relative;
+    font-weight: 500;
+}
+
+.oct-alert--info {
+    background-color: var(--cyan-100);
+    color: var(--cyan-600);
+}
+
+.oct-alert--success {
+    background-color: var(--moss-100);
+    color: var(--moss-600);
+}
+
+.oct-alert--warning {
+    background-color: var(--orange-200);
+    color: var(--orange-600);
+}
+
+.oct-alert--error {
+    background-color: var(--magenta-100);
+    color: var(--magenta-700);
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    .oct-alert--info {
+        background-color: var(--cyan-600);
+        color: var(--cyan-100);
+    }
+    
+    .oct-alert--success {
+        background-color: var(--moss-600);
+        color: var(--moss-100);
+    }
+    
+    .oct-alert--warning {
+        background-color: var(--orange-400);
+        color: var(--orange-800);
+    }
+    
+    .oct-alert--error {
+        background-color: var(--magenta-700);
+        color: var(--magenta-100);
+    }
+}*/
+
+.oct-alert--info .oct-alert__summary::-webkit-details-marker,
+.oct-alert--info .oct-alert__summary::marker {
+    content: "📢  ";
+}
+
+.oct-alert--success .oct-alert__summary::-webkit-details-marker,
+.oct-alert--success .oct-alert__summary::marker {
+    content: "🎉  ";
+}
+
+.oct-alert--warning .oct-alert__summary::-webkit-details-marker,
+.oct-alert--warning .oct-alert__summary::marker {
+    content: "⚠️  ";
+}
+
+.oct-alert--error .oct-alert__summary::-webkit-details-marker,
+.oct-alert--error .oct-alert__summary::marker {
+    content: "🚨  ";
+}
+
+.oct-alert__close_button {
+    border: none;
+    background: transparent;
+    color: var(--gray-800);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    padding: var(--scale-1) var(--scale-2);
+}
+
+.oct-alert--info .oct-alert__close_button {
+    color: var(--cyan-900);
+}
+
+.oct-alert--success .oct-alert__close_button {
+    color: var(--moss-900);
+}
+
+.oct-alert--warning .oct-alert__close_button {
+    color: var(--orange-900);
+}
+
+.oct-alert--error .oct-alert__close_button {
+    color: var(--magenta-900);
+}

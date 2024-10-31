@@ -1,0 +1,26 @@
+.oct-tag {
+    --tag-color: var(--orange-500);
+    padding: var(--scale-1) .75em;
+    border-radius: calc(var(--border-radius) * 2);
+    color: var(--tag-color);
+    font-weight: 600;
+    font-size: 0.75em;
+    border: 2px solid var(--tag-color);
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: calc(1em / 2);
+    background-color: transparent;
+}
+
+.oct-tag > svg {
+    align-self: center;
+}
+
+.oct-tag__icon {
+    height: 1.5em;
+    width: auto;
+    color: inherit;
+    align-self: center;
+}

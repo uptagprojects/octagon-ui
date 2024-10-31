@@ -1,0 +1,19 @@
+.oct-md-viewer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap: var(--scale-3);
+    
+}
+
+.oct-md-viewer img,
+.oct-md-viewer code {
+    border-radius: var(--border-radius);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0;
+}
