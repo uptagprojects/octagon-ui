@@ -2,6 +2,7 @@
     padding: var(--scale-4);
     display: grid;
     place-items: stretch;
+    place-content: stretch;
     gap: var(--scale-3);
     width: 100%;
     height: auto;
@@ -9,13 +10,21 @@
     margin: 0px;
 }
 
+.oct-container--left {
+    place-items: start;
+}
+
 .oct-container--center {
     place-items: center;
 }
 
+.oct-container--right {
+    place-items: end;
+}
+
 .oct-container--display {
-    place-content: center;
     min-height: 90vh;
+    align-content: center;
 }
 
 @container oct-body (min-width: 480px) {

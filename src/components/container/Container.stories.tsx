@@ -11,13 +11,25 @@ export default {
     title: 'Components/Container',
     component: Container,
     tags: ['autodocs'],
+    argTypes: {
+        display: {
+            control: {
+                type: 'boolean'
+            }
+        },
+        align: {
+            control: {
+                type: 'select',
+                options: ['left', 'right', 'center']
+            }
+        },
+    }
 } as Meta;
 
 type Story = StoryObj<typeof Container>;
 
 export const DefaultContainer: Story = {
     args: {
-        center: false
     },
     render:(args) => (
         <Container {...args}>
@@ -26,15 +38,22 @@ export const DefaultContainer: Story = {
     )
 };
 
-export const CenteredContainer: Story = {
+export const ContainterAlignment: Story = {
     args: {
-        center: true,
+        display: false,
+        children: (
+            <>
+                <header><h3>Title</h3></header>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, corrupti culpa? Voluptate reiciendis repudiandae omnis molestiae ea, consequatur commodi. Veritatis nemo autem nisi at provident assumenda deleniti quae iusto molestias?</p>
+            </>
+        )
     },
     render:(args) => (
-        <Container {...args}>
-            <header><h3>Title</h3></header>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, corrupti culpa? Voluptate reiciendis repudiandae omnis molestiae ea, consequatur commodi. Veritatis nemo autem nisi at provident assumenda deleniti quae iusto molestias?</p>
-        </Container>
+        <>
+            {[ "left", "center", "right" ].map((align) => (
+                <Container {...args} align={align as 'left' | 'center' | 'right'} />
+            ))}
+        </>
     )
 };
 
