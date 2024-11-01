@@ -256,13 +256,17 @@ figcaption {
   --text-body-size: var(--size-3);
   font-size: clamp(var(--text-body-size), 2vw + var(--text-body-size), calc(var(--text-body-size) * 1.25));
   font-family: var(--font-body);
-  max-width: 64cap;
   line-height: 1.75em;
+}
+
+p {
+  max-width: 64cap;
 }
 
 code,
 blockquote {
-  --text-code-size: 1.15rem;
+  --text-code-size: 0.85em;
   font-size: clamp(var(--text-code-size), 2vw + var(--text-code-size), calc(var(--text-code-size) * 1.5));
+  line-height: 1.5em;
   font-family: var(--font-mono), monospace;
 }
