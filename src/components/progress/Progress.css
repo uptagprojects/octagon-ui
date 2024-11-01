@@ -1,4 +1,6 @@
 .oct-progress {
+  --border-color: var(--cyan-400);
+  --label-color: var(--cyan-400);
   display: grid;
   grid-template-columns: 1fr;
   font-size: var(--scale-3);
@@ -23,12 +25,10 @@
   font-size: var(--scale-5);
 }
 
-
-
 .oct-progress__label {
   grid-area: oct-progress__label;
   font-size: 0.85em;
-  color: var(--gray-400);
+  color: var(--label-color);
   font-weight: 500;
 }
 
@@ -36,12 +36,20 @@
   grid-area: oct-progress__bar;
   width: 100%;
   height: 100%;
-  background: var(--gray-400);
+  background: transparent;
+  border: 1px solid var(--border-color);
   border-radius: 2em;
   overflow: hidden;
 }
 
 .oct-progress__bar::-moz-progress-bar {
-  border-radius: 2em;
+  border-radius: 1.5em;
   background: var(--sunset-gradient-horizontal);
+}
+
+@media(prefers-color-scheme: dark) {
+  .oct-progress {
+    --border-color: var(--gray-700);
+    --label-color: var(--gray-400);
+  }
 }
