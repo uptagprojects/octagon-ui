@@ -6,23 +6,32 @@ export default {
     title: 'Components/Footer',
     component: Footer,
     tags: ['autodocs'],
+    argTypes: {
+        center: {
+            control: {
+                type: 'boolean'
+            }
+        }
+    }
 } as Meta;
 
 type Story = StoryObj<typeof Footer>;
 
 export const Default: Story = {
-    args: {},
-    render: () => (
-        <Footer>
+    args: {
+        children: (
             <p>Made with ❤️ by PNFi</p>
-        </Footer>
+        )
+    },
+    render: (args) => (
+        <Footer {...args} />
     )
 };
 
 export const Centered: Story = {
     args: {},
-    render: () => (
-        <Footer center>
+    render: (args) => (
+        <Footer center {...args}>
             <p>Made with ❤️ by PNFi</p>
         </Footer>
     )

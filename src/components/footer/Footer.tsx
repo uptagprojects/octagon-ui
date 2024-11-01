@@ -1,16 +1,14 @@
 import React, { FC, ReactNode } from 'react';
 import "./Footer.css";
-import Container from '../container/Container';
-interface FooterProps {
+interface FooterProps extends React.HTMLAttributes<HTMLElement> {
     children: ReactNode;
     center?: boolean;
+    className?: string;
 }
 
-const Footer: FC<FooterProps> = ({ children, center = false }) => (
-    <footer className={`oct-footer`}>
-        <Container className="oct-footer__container" center={center}>
-            {children}
-        </Container>
+const Footer: FC<FooterProps> = ({ children, center = false, className, ...props }) => (
+    <footer {...props} className={`oct-footer ${center ? "oct-footer--center" : ""} ${className ?? ""}`}>
+        {children}
     </footer>
 );
 
