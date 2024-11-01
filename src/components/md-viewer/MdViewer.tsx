@@ -14,7 +14,8 @@ import rehypeReact from 'rehype-react';
 import "./MdViewer.css";
 import Container from '../container/Container';
 import Progress from '../progress/Progress';
-import Alert from '../alert/Alert';
+import rehypeHighlight from 'rehype-highlight';
+
 interface MdPreviewProps {
   content: string;
   loader?: React.ReactNode;
@@ -29,12 +30,10 @@ function useProcessor(text: string) {
       .use(remarkParse)
       .use(remarkGfm)
       .use(remarkMath)
-      .use(remarkEmbedder, {
-        transformers: [oembedTransformer]
-      })
       .use(remarkRehype, {
         allowDangerousHtml: true
       })
+      .use(rehypeHighlight)
       .use(rehypeKatex)
       .use(rehypeUnwrapImages)
       .use(rehypeReact, production)

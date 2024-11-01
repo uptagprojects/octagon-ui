@@ -1,3 +1,5 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+
 .oct-md-viewer {
     width: 100%;
     height: auto;
@@ -9,11 +11,74 @@
     
 }
 
-.oct-md-viewer img,
-.oct-md-viewer code {
+.oct-md-viewer img {
     border-radius: var(--border-radius);
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 0;
 }
+
+.oct-md-viewer code {
+    border-radius: 0.25em;
+    background: var(--gray-100);
+    color: var(--cyan-700);
+    font-weight: 500;
+    padding: 0.25cap 0.25cap;
+    display: inline-block;
+}
+
+
+.oct-md-viewer pre code {
+    border-radius: var(--border-radius);
+    background: var(--cyan-900);
+    color: var(--cyan-100);
+    font-weight: 500;
+    line-height: 1.75em;
+    padding: var(--scale-3);
+    display: block;
+    width: 100%;
+    text-wrap: wrap;
+}
+
+
+.oct-md-viewer blockquote {
+    margin: 0px;
+    border-radius: var(--border-radius);
+    padding: var(--scale-3);
+    background: var(--cyan-700);
+    color: var(--orange-100);
+    text-indent: 1cap;
+    font-size: 1.25em;
+    font-family: var(--font-display);
+    font-weight: 600;
+    width: 100%;
+}
+
+.oct-md-viewer blockquote p {
+    margin: 0px;
+}
+
+.oct-md-viewer blockquote p::first-letter {
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.oct-md-viewer blockquote::before {
+    content: "“";
+    display: inline-block;
+    font-size: 2em;
+    color: var(--cyan-100);
+    margin-right: 0.5cap;
+}
+
+.oct-md-viewer blockquote::after {
+    content: "”";
+    display: inline-block;
+    font-size: 2em;
+    color: var(--cyan-100);
+    margin-left: 0.5cap;
+    margin-top: 1cap;
+}
+
+
