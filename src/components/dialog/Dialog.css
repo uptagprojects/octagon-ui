@@ -17,11 +17,11 @@
     content: "";
     display: block;
     width: 100%;
-    height: 2px;
+    height: 4px;
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: var(--sunset-gradient);
+    background-image: var(--sunset-gradient-horizontal);
 }
 
 .oct-dialog__container {

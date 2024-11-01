@@ -84,12 +84,28 @@
   --sunset-gradient-color-5: var(--cyan-500);
   --sunset-gradient-color-6: oklch(38.83% 0.041 237.32);
   --sunset-gradient: radial-gradient(131.84% 131.84% at 88.75% 15%,
-      var(--sunset-gradient-color-1) 19%,
-      var(--sunset-gradient-color-2) 38%,
-      var(--sunset-gradient-color-3) 55%,
-      var(--sunset-gradient-color-4) 70%,
-      var(--sunset-gradient-color-5) 83%,
-      var(--sunset-gradient-color-6));
+    var(--sunset-gradient-color-1) 19%,
+    var(--sunset-gradient-color-2) 38%,
+    var(--sunset-gradient-color-3) 55%,
+    var(--sunset-gradient-color-4) 70%,
+    var(--sunset-gradient-color-5) 83%,
+    var(--sunset-gradient-color-6));
+
+  --sunset-gradient-horizontal: linear-gradient(-120deg,
+    var(--sunset-gradient-color-1) 19%,
+    var(--sunset-gradient-color-2) 38%,
+    var(--sunset-gradient-color-3) 55%,
+    var(--sunset-gradient-color-4) 70%,
+    var(--sunset-gradient-color-5) 83%,
+    var(--sunset-gradient-color-6) 120%);
+
+  --sunset-gradient-vertical: linear-gradient(185deg,
+    var(--sunset-gradient-color-1) 19%,
+    var(--sunset-gradient-color-2) 38%,
+    var(--sunset-gradient-color-3) 55%,
+    var(--sunset-gradient-color-4) 70%,
+    var(--sunset-gradient-color-5) 83%,
+    var(--sunset-gradient-color-6) 120%);
   
   --primary-color: var(--orange-500);
   --secondary-color: var(--cyan-500);
@@ -184,11 +200,12 @@ body {
   container: oct-body / inline-size;
   display: grid;
   grid-template-columns: auto clamp(320px, 100%, var(--max-content-width)) auto;
-  grid-template-rows: 6cap auto 50dvh;
+  grid-template-rows: 6cap auto 50dvh min-content;
   grid-template-areas: 
     "header header header"
-    ". main ."
-    "footer footer footer";
+    "aside main aside"
+    "footer footer footer"
+    ". . .";
   gap: 0px var(--page-margin);
   place-items: stretch;
   justify-content: stretch;
