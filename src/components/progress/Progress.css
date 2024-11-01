@@ -1,4 +1,5 @@
 .oct-progress {
+  --bar-color: var(--sunset-gradient-horizontal) 0/100%;
   --border-color: var(--cyan-400);
   --label-color: var(--cyan-400);
   display: grid;
@@ -42,9 +43,19 @@
   overflow: hidden;
 }
 
+.oct-progress__bar::-webkit-progress-bar {
+  border-radius: 2em;
+  background: transparent;
+}
+
+.oct-progress__bar::-webkit-progress-value {
+  border-radius: 1.5em;
+  background: var(--bar-color);
+}
+
 .oct-progress__bar::-moz-progress-bar {
   border-radius: 1.5em;
-  background: var(--sunset-gradient-horizontal);
+  background: var(--bar-color);
 }
 
 @media(prefers-color-scheme: dark) {
