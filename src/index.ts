@@ -20,6 +20,7 @@ export { default as Navbar } from './components/navbar/Navbar';
 export { default as Progress } from './components/progress/Progress';
 export { default as Radio } from './components/radio/Radio';
 export { default as Select } from './components/select/Select';
+export { default as Spinner } from './components/spinner/Spinner';
 export { default as Switch } from './components/switch/Switch';
 export { default as TextInput } from './components/text-input/TextInput';
 export { default as TextArea } from './components/text-area/TextArea';

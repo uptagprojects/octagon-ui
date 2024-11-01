@@ -1,0 +1,19 @@
+.oct-spinner {
+    display: block;
+    border: 4px solid var(--gray-200);
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: var(--size-6);
+    height: var(--size-6);
+    animation: oct-spin-animation 1s linear infinite;
+}
+
+@keyframes oct-spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}

@@ -28,6 +28,9 @@
     display: inline-block;
 }
 
+.oct-md-viewer pre {
+    width: 100%;
+}
 
 .oct-md-viewer pre code {
     border-radius: var(--border-radius);

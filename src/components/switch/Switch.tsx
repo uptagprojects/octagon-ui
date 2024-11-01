@@ -3,19 +3,20 @@ import "./Switch.css";
 
 interface SwitchProps extends React.HTMLAttributes<HTMLInputElement> {
     label: string;
+    hideLabel?: boolean;
     rightLabel?: string;
     active: boolean;
     size?: "small" | "medium" | "large";
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Switch: FC<SwitchProps> = ({ label, rightLabel, active, size = "medium", className, onChange, ...props }) => {
-
+const Switch: FC<SwitchProps> = ({ label, rightLabel, active, size = "medium", className, onChange=() => {}, hideLabel=false, ...props }) => {
     return (
-        <label className={`oct-switch oct-switch--${size}`}>
+        <label className={`oct-switch oct-switch--${size} ${hideLabel ? 'oct-switch--hide-label' : ''}`}>
             <span className="oct-switch__label">{label}</span>
             <div className="oct-switch__container">
                 <input {...props}
+                    aria-label={label}
                     className={`oct-switch__toggle ${className ?? ""}`}
                     type="checkbox"
                     checked={active}

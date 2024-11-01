@@ -31,3 +31,18 @@ export const Default: Story = {
     rightLabel: "on",
   }
 };
+
+
+export const SwitchSizes: Story = {
+  args: {
+    active: true,
+    label: "public"
+  },
+  render: (args) => (
+      <div>
+          {["small", "medium", "large"].map((size) => (
+              <Switch {...args} key={size} size={size as "small" | "medium" | "large"} />
+          ))}
+      </div>
+  ),
+};

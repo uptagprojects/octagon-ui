@@ -6,6 +6,7 @@ import Checkbox from '../checkbox/Checkbox';
 import Button from '../button/Button';
 import Card from '../card/Card';
 import FileUploader from '../file-uploader/FileUploader';
+import Switch from '../switch/Switch';
 
 export default {
     title: 'Components/Container',
@@ -88,18 +89,21 @@ export const MultipleContainers: Story = {
                 <header><h3>Title</h3></header>
                 <Card>
                     <TextInput label="Name" size="small" />
+                    <Switch hideLabel active={true} label="status" size="small" />
                     <Checkbox label="I agree to the terms and conditions" size="small" />
                     <FileUploader label="Upload file" size="small" />
                     <Button variant='primary' size="small" label="submit" />
                 </Card>
                 <Card>
                     <TextInput label="Name" size="medium" />
+                    <Switch hideLabel active={true} label="status" size="medium" />
                     <Checkbox label="I agree to the terms and conditions" size="medium" />
                     <FileUploader label="Upload file" size="small" />
                     <Button size="medium" label="submit" />
                 </Card>
                 <Card>
                     <TextInput label="Name" size="large" />
+                    <Switch hideLabel active={true} label="status" size="large" />
                     <Checkbox label="I agree to the terms and conditions" size="large" />
                     <FileUploader label="Upload file" size="small" />
                     <Button size="large" label="submit" />

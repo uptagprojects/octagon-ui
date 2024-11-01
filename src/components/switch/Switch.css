@@ -16,16 +16,33 @@
     place-content: start;
 }
 
+
+.oct-switch--medium {
+    font-size: var(--size-4);
+}
+
+.oct-switch--large {
+    font-size: var(--size-6);
+}
+
 @media (prefers-color-scheme: dark) {
     .oct-switch {
         --oct-switch-label-color: var(--gray-200);
     }
 }
 
+
 .oct-switch__label {
     font-size: 1.25em;
     font-weight: 500;
     color: var(--oct-switch-label-color);
+}
+
+.oct-switcht--hide-label .oct-switch__label {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
 }
 
 .oct-switch__container {
@@ -81,5 +98,5 @@
 }
 
 .oct-switch__toggle:checked + .oct-switch__slider::before {
-    transform: translateX(calc(100% + 0.85em));
+    transform: translateX(calc(100% + 1em));
 }
