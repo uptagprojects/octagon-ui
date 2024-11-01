@@ -1,0 +1,85 @@
+/* Based on Switch by andrew-demchenk0 https://uiverse.io/andrew-demchenk0/tiny-fish-66 */
+
+.oct-switch {
+    --oct-switch-label-color: var(--gray-600);
+    --oct-switch-border-color: var(--cyan-700);
+    --oct-switch-toggled-color: var(--moss-400);
+    --oct-switch-unchecked-color: var(--magenta-400);
+    font-size: var(--size-3);
+    display: grid;
+    grid-template-columns: auto 5em auto;
+    grid-template-rows: 2em;
+    line-height: 1.5;
+    gap: 2cap;
+    margin-bottom: var(--scale-3);
+    place-items: center;
+    place-content: start;
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-switch {
+        --oct-switch-label-color: var(--gray-200);
+    }
+}
+
+.oct-switch__label {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: var(--oct-switch-label-color);
+}
+
+.oct-switch__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6em;
+    width: 100%;
+    height: 100%;
+}
+
+
+.oct-switch__toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.oct-switch__slider {
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    border: 0.2em solid var(--oct-switch-border-color);
+    box-shadow: -0.25em 0.25em var(--oct-switch-border-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--oct-switch-unchecked-color);
+    transition: 0.3s;
+}
+
+.oct-switch__slider::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 2em;
+    width: 2em;
+    border: 0.2em solid var(--oct-switch-border-color);
+    border-radius: 0.5em;
+    left: -0.25em;
+    bottom: 0.25em;
+    background-color: var(--orange-000);
+    box-shadow: 0 0.3em 0 var(--oct-switch-border-color);
+    transition: 0.3s;
+}
+
+.oct-switch__toggle:checked + .oct-switch__slider {
+    background-color: var(--oct-switch-toggled-color);
+}
+
+.oct-switch__toggle:checked + .oct-switch__slider::before {
+    transform: translateX(calc(100% + 0.85em));
+}
