@@ -18,13 +18,13 @@ export default [
       file: packageJson.main,
       name: "octagon-ui",
       format: "amd",
-      sourcemap: true,
+      sourcemap: false,
       inlineDynamicImports: true
     }, {
       file: packageJson.module,
       name: "octagon-ui",
       format: "es",
-      sourcemap: true,
+      sourcemap: false,
       inlineDynamicImports: true
     }],
     plugins: [
@@ -37,7 +37,7 @@ export default [
       postcss({
         extract: true,
         minimize: true,
-        sourceMap: true
+        sourceMap: false
       }),
       terser()
     ],
