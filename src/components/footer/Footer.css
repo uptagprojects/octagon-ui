@@ -1,12 +1,18 @@
 .oct-footer {
     grid-area: footer;
+    position: relative;
     background-color: var(--body-background-color);
     color: var(--orange-100);
-    padding: var(--scale-4);
+    padding: var(--scale-6) 0px;
     box-sizing: border-box;
-    gap: var(--scale-3);
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
 }
 
+.oct-footer > * {
+    grid-column: 2 / 3;
+}
 
 .oct-footer::before {
     content: "";
@@ -24,13 +30,13 @@
 }
 
 @container oct-body (min-width: 480px) {
-    .oct-container {
-        padding: var(--scale-6);
+    .oct-footer {
+        padding: var(--scale-6) 1cap;
     }
 }
 
 @container oct-body (min-width: 640px) {
-    .oct-container {
+    .oct-footer {
         padding: var(--scale-8);
     }
 }
