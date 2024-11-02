@@ -203,11 +203,11 @@ body {
   grid-template-rows: 6cap auto 50dvh min-content;
   grid-template-areas: 
     "header header header"
-    "aside main aside"
+    "aside-left main aside-right"
     "footer footer footer"
     ". . .";
   gap: 0px var(--page-margin);
-  place-items: stretch;
+  place-content: center;
   justify-content: stretch;
   justify-items: stretch;
   align-content: stretch;

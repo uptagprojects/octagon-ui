@@ -1,8 +1,5 @@
 .oct-footer {
     grid-area: footer;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: auto;
     background-color: var(--body-background-color);
     color: var(--orange-100);
     padding: var(--scale-4);
