@@ -31,6 +31,10 @@
     }
 }
 
+body[data-theme="dark"] .oct-switch {
+    --oct-switch-label-color: var(--gray-200);
+}
+
 
 .oct-switch__label {
     font-size: 1.25em;

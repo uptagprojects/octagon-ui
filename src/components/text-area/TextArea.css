@@ -70,3 +70,15 @@
         color: var(--magenta-300);
     }
 }
+
+body[data-theme="dark"] .oct-text-area__label {
+    color: var(--gray-200);
+}
+
+body[data-theme="dark"] .oct-text-area__input {
+    border-color: var(--gray-100);
+}
+
+body[data-theme="dark"] .oct-text-area__error-message {
+    color: var(--magenta-300);
+}

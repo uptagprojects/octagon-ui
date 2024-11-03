@@ -39,6 +39,10 @@
     }
 }
 
+body[data-theme="dark"] .oct-navbar__brand {
+    color: var(--orange-200);
+}
+
 header.oct-navbar__brand a {
     color: inherit;
     text-decoration: none;

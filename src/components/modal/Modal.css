@@ -18,6 +18,10 @@
     }
 }
 
+body[data-theme="dark"] .oct-modal {
+    --shadow-color: var(--magenta-700);
+}
+
 .oct-modal::backdrop {
     background: var(--cyan-900);
     background-blend-mode: overlay;

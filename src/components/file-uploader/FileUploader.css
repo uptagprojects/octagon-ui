@@ -39,6 +39,14 @@
     }
 }
 
+body[data-theme="dark"] .oct-file-uploader {
+    --oct-background-color: var(--gray-800);
+    --border-color: var(--gray-500);
+    --hover-border-color: var(--cyan-300);
+    --text-color: var(--gray-200);
+    --hover-text-color: var(--cyan-100);
+}
+
 .oct-file-uploader__wrapper {
     font-size: var(--size-4);
     width: 100%;

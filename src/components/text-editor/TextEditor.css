@@ -18,6 +18,12 @@
     }
 }
 
+body[data-theme="dark"] .oct-text-editor {
+    --toolbar-background-color: var(--gray-600);
+    --toolbar-text-color: var(--gray-100);
+    --toolbar-text-color-hover: var(--orange-300);
+}
+
 .oct-text-editor__toolbar {
     grid-column: 1 / 2;
     grid-row: 1 / 2;

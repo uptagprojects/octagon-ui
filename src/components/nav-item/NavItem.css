@@ -42,3 +42,16 @@ li.oct-nav-item--active {
         color: var(--orange-200);
     }
 }
+
+body[data-theme="dark"] li.oct-nav-item {
+    color: var(--cyan-400);
+}
+
+body[data-theme="dark"] li.oct-nav-item:hover {
+    border: 1px solid var(--cyan-400);
+    color: var(--cyan-400);
+}
+
+body[data-theme="dark"] li.oct-nav-item--active {
+    color: var(--orange-200);
+}

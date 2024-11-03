@@ -103,3 +103,15 @@
         color: var(--magenta-300);
     }
 }
+
+body[data-theme="dark"] .oct-select__label {
+    color: var(--gray-200);
+}
+
+body[data-theme="dark"] .oct-select__select {
+    color: var(--gray-100);
+}
+
+body[data-theme="dark"] .oct-select__error-message {
+    color: var(--magenta-300);
+}

@@ -69,3 +69,7 @@
         color: var(--gray-200);
     }
 }
+
+body[data-theme="dark"] .oct-radio__label {
+    color: var(--gray-200);
+}

@@ -29,6 +29,10 @@
     }
 }
 
+body[data-theme="dark"] .oct-card.oct-card--hoverable:hover {
+    --box-shadow-color: var(--orange-600);
+}
+
 .oct-card__image img {
     width: 100%;
     height: auto;
@@ -106,4 +110,16 @@
     .oct-card__content {
         color: var(--orange-000);
     }
+}
+
+body[data-theme="dark"] .oct-card__header .oct-card__title {
+    color: var(--orange-200);
+}
+
+body[data-theme="dark"] .oct-card__header .oct-card__subtitle {
+    color: var(--gray-200);
+}
+
+body[data-theme="dark"] .oct-card__content {
+    color: var(--orange-000);
 }
