@@ -58,7 +58,7 @@ body[data-theme="dark"] .oct-button {
     right: calc(var(--button-primary-stroke-width) * -1);
     bottom: calc(var(--button-primary-stroke-width) * -1);
     left: calc(var(--button-primary-stroke-width) * -1);
-    z-index: -1;
+    z-index: 1;
     display: block;
     background-image: var(--sunset-gradient);
     border-radius: inherit;
@@ -71,12 +71,16 @@ body[data-theme="dark"] .oct-button {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
     display: block;
     opacity: 1;
     background-color: var(--orange-000);
     border-radius: calc(var(--button-border-radius) - var(--button-primary-stroke-width));
     transition: all 0.3s ease-in-out;
+}
+
+.oct-button.oct-button--primary > * {
+    z-index: 3;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,5 +1,5 @@
 import { LucideUploadCloud } from "lucide-react"
-import React from "react";
+import React, { useId } from "react";
 import {Accept, useDropzone} from 'react-dropzone';
 
 import "./FileUploader.css";
@@ -24,18 +24,20 @@ const FileUploader:React.FC<FileUploaderProps> = ({ label, size = "medium", disa
         multiple,
         accept: mimeType
     });
+    const id = useId();
 
     return (
-        <label {...getRootProps({ className: `oct-file-uploader oct-file-uploader--${size}` })}>
+        <div {...getRootProps({ className: `oct-file-uploader oct-file-uploader--${size}` })}>
             <input
                 type="file"
+                aria-labelledby={id}
                 {...getInputProps({ className: "oct-file-uploader__input" })}
                 />
             <div className="oct-file-uploader__wrapper">
                 <LucideUploadCloud className="oct-file-uploader__icon" />
-                <span className="oct-file-uploader__label">{label}</span>
+                <span className="oct-file-uploader__label" id={id}>{label}</span>
             </div>
-        </label>
+        </div>
     );
 }
 

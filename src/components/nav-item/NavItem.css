@@ -1,17 +1,17 @@
 li.oct-nav-item {
-    font-size: var(--size-5);
-    line-height: var(--size-5);
+    font-size: var(--size-4);
+    line-height: var(--size-4);
     font-weight: 500;
     text-align: center;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    color: var(--orange-500);
+    color: var(--body-font-color);
     padding: var(--scale-2) var(--scale-4);
     border-radius: var(--border-radius);
     text-transform: lowercase;
     text-decoration: none;
     box-sizing: padding-box;
-    border: 1px solid transparent;
+    border: 0px;
 }
 
 li.oct-nav-item a {
@@ -20,38 +20,12 @@ li.oct-nav-item a {
 }
 
 .oct-nav-item:hover {
-    border: 1px solid var(--cyan-700);
-    color: var(--cyan-700);
+    border: 1px solid var(--magenta-600);
+    border-bottom: 4px solid var(--magenta-600);
+    color: var(--magenta-600);
 }
 
 li.oct-nav-item--active {
-    color: var(--cyan-800);
-}
-
-@media (prefers-color-scheme: dark) {
-    li.oct-nav-item {
-        color: var(--cyan-400);
-    }
-
-    li.oct-nav-item:hover {
-        border: 1px solid var(--cyan-400);
-        color: var(--cyan-400);
-    }
-
-    li.oct-nav-item--active {
-        color: var(--orange-200);
-    }
-}
-
-body[data-theme="dark"] li.oct-nav-item {
-    color: var(--cyan-400);
-}
-
-body[data-theme="dark"] li.oct-nav-item:hover {
-    border: 1px solid var(--cyan-400);
-    color: var(--cyan-400);
-}
-
-body[data-theme="dark"] li.oct-nav-item--active {
-    color: var(--orange-200);
+    border-color: var(--orange-500);
+    color: var(--orange-500);
 }
