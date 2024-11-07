@@ -14,7 +14,7 @@
 
 @container oct-body (min-width: 480px) {
     .oct-card {
-        min-width: 32cap;
+        min-width: var(--size-14);
     }
 }
 

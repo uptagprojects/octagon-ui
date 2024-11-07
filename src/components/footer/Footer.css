@@ -2,7 +2,7 @@
     grid-area: footer;
     position: relative;
     background-color: var(--body-background-color);
-    color: var(--orange-100);
+    color: var(--body-font-color);
     padding: var(--scale-6) 0px;
     box-sizing: border-box;
     display: grid;

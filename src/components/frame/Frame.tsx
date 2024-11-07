@@ -11,7 +11,7 @@ const Frame: React.FC<FrameProps> = ({ aspectRatio, caption, children }) => {
     return (
         <figure className={`oct-frame oct-frame--container oct-frame--${aspectRatio} ${caption ? "oct-frame--has-caption" : ""}`}>
             <div className="oct-frame__content">{children}</div>
-            {caption && <caption className="oct-frame__caption">{caption}</caption>}
+            {caption && <figcaption className="oct-frame__caption">{caption}</figcaption>}
         </figure>
     );
 };
