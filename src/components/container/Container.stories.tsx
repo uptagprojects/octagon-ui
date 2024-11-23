@@ -7,6 +7,7 @@ import Button from '../button/Button';
 import Card from '../card/Card';
 import FileUploader from '../file-uploader/FileUploader';
 import Switch from '../switch/Switch';
+import { ExternalLink } from 'lucide-react';
 
 export default {
     title: 'Components/Container',
@@ -83,7 +84,33 @@ export const MultipleContainers: Story = {
             </Container>
             <Container {...args}>
                 <header><h3>Title</h3></header>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, corrupti culpa? Voluptate reiciendis repudiandae omnis molestiae ea, consequatur commodi. Veritatis nemo autem nisi at provident assumenda deleniti quae iusto molestias?</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <a>Animi<ExternalLink /></a>, corrupti culpa? Voluptate reiciendis repudiandae omnis molestiae ea, consequatur commodi. Veritatis nemo autem nisi at provident assumenda deleniti quae iusto molestias?</p>
+                <p>About:
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi rem error officia perferendis placeat vel, beatae, numquam perspiciatis quod distinctio blanditiis. Vitae deserunt voluptatem atque saepe, possimus ab praesentium.</li>
+                    </ul>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uno</th>
+                            <th>Dos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
             </Container>
             <Container {...args}>
                 <header><h3>Title</h3></header>

@@ -1,5 +1,5 @@
 import { icons } from 'lucide-react';
-import React, { FC, InputHTMLAttributes, useMemo } from 'react';
+import React, { FC, InputHTMLAttributes, useId, useMemo } from 'react';
 import "./TextInput.css";
 
 interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
@@ -13,7 +13,7 @@ interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "si
 
 
 const TextInput: FC<TextInputProps> = ({ errorMessage, icon, type="text", size="medium", hideLabel=false, disabled=false, className="", ...props }) => {
-    const inputId = useMemo(() => globalThis.crypto.randomUUID(), []);
+    const inputId = useId();
     const LucideIcon = icons[icon as keyof typeof icons];
     return (
         <div className={`oct-text-input oct-text-input--${size} ${hideLabel ? 'oct-text-input--hide-label' : ''} ${icon ? "oct-text-input--has-icon" : ""} ${disabled ? 'oct-text-input--disabled' : ''} ${errorMessage ? "oct-text-input--has-error" : ""}`}>

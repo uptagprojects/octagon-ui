@@ -1,5 +1,4 @@
 .oct-alert {
-    display: flex;
     padding: var(--scale-4);
     border-radius: var(--border-radius);
     background-color: var(--gray-500);
@@ -10,6 +9,7 @@
 .oct-alert__summary {
     position: relative;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .oct-alert--info {

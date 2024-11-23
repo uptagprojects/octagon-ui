@@ -1,19 +1,19 @@
-import React, { useMemo } from "react";
+import React, { useId, useMemo } from "react";
 import "./Progress.css"
 
 interface ProgressProps extends React.HTMLAttributes<HTMLProgressElement> {
     label: string;
     hideLabel?: boolean;
     size: "small" | "medium" | "large";
-    value?: number;
+    value?: number | null;
     max?: number;
 }
-const Progress: React.FC<ProgressProps> = ({ size="small", label, hideLabel=false, ...props }) => {
-    const inputId = useMemo(() => globalThis.crypto.randomUUID(), []);
+const Progress: React.FC<ProgressProps> = ({ size="small", label, hideLabel=false, value=null, max=1, ...props }) => {
+    const inputId = useId();
     return (
         <div className={`oct-progress oct-progress--${size} ${hideLabel ? 'oct-progress--hide-label' : ''}`}>
             <label htmlFor={inputId} className="oct-progress__label">{label}</label>
-            <progress {...props} id={inputId} className="oct-progress__bar" />
+            <progress {...props} value={value ?? undefined} max={max} id={inputId} className="oct-progress__bar" />
         </div>
     );
 }

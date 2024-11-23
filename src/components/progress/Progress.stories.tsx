@@ -27,6 +27,8 @@ type Story = StoryObj<typeof Progress>;
  
 export const Default: Story = {
   args: {
+    label: "hola",
+    hideLabel: true
   }
 };
 

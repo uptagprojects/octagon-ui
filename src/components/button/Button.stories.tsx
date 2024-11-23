@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
  
 import Button from './Button';
+import Container from '../container/Container';
  
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -63,9 +64,28 @@ export const ButtonWithIcon: Story = {
   },
   render: (args) => (
     <div>
-      {[ "small", "medium", "large" ].map((size) => (
-        <Button {...args} size={size as 'small' | 'medium' | 'large'} label={`${size} button`} />
-      ))}
+      <Container>
+        {[ "small", "medium", "large" ].map((size) => (
+          <div>
+            {["primary", "secondary", "tertiary"].map((variant) => (
+            <Button
+            {...args}
+            variant={variant as 'primary' | 'secondary' | 'tertiary'}
+            size={size as 'small' | 'medium' | 'large'}
+            label={`${size} button`} />
+            ))}
+          </div>
+        ))}
+      </Container>
+      {[ "small", "medium", "large" ].map((size) => ["primary", "secondary", "tertiary"].map((variant) => (
+        <Button
+          {...args}
+          hideLabel
+          variant={variant as 'primary' | 'secondary' | 'tertiary'}
+          size={size as 'small' | 'medium' | 'large'}
+          label={`icon only ${size} button`}
+          />
+      )))}
     </div>
   ),
 }

@@ -48,6 +48,7 @@ body[data-theme="dark"] .oct-button {
     background-clip: padding-box;
     background: transparent;
     box-sizing: border-box;
+    padding: calc(1em / 3 - var(--button-primary-stroke-width)) calc(2em - var(--button-primary-stroke-width) / 2);
     margin: var(--button-primary-stroke-width);
 }
 
@@ -102,18 +103,19 @@ body[data-theme="dark"] .oct-button.oct-button--primary::after {
 
 .oct-button--primary:hover {
     color: var(--orange-000);
-}
+}   
 
 .oct-button--primary:hover:after {
     background: transparent;
     color: #fff;
 }
 
-.oct-button.oct-button--secondary {
+.oct-button--secondary {
     border-color: var(--orange-500);
     border-width: var(--button-secondary-stroke-width);
     border-style: solid;
     color: var(--orange-500);
+    box-sizing: border-box;
 }
 
 .oct-button--secondary:hover  {
@@ -122,8 +124,10 @@ body[data-theme="dark"] .oct-button.oct-button--primary::after {
 }
 
 .oct-button--tertiary {
+    box-sizing: border-box;
     color: var(--orange-500);
     background-color: transparent;
+    padding: calc(1em / 3 + var(--button-secondary-stroke-width)) calc(2em + var(--button-secondary-stroke-width));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -163,4 +167,10 @@ body[data-theme="dark"] .oct-button--tertiary {
 
 .oct-button--block {
     width: 100%;
+}
+
+.oct-button--hidden-label {
+    padding-left: calc(1em / 2);
+    padding-right: calc(1em / 2);
+    --button-border-radius: calc(1em / 2);
 }

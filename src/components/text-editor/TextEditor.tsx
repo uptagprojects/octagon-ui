@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { InputHTMLAttributes, useCallback, useRef, useState } from 'react';
 import { TextEditorToolbar } from './TextEditorToolbar';
 import remarkGfm from 'remark-gfm';
 import { PluggableList } from 'unified';
@@ -23,17 +23,17 @@ import "./TextEditor.css";
 
 
 
-interface EditorProps {
+interface EditorProps extends Omit<InputHTMLAttributes<HTMLTextAreaElement>, "onChange" | "size"> {
   value: string;
   onChange: (value: string) => void;
-  remarkPlugins?: PluggableList;
   uploadRequest?: (file: File) => Promise<string>;
 }
 
 const TextEditor: React.FC<EditorProps> = ({ 
   value, 
   onChange,
-  uploadRequest
+  uploadRequest,
+  ...textAreaProps
 }) => {
   const [isImageDialogOpen, setIsImageDialogOpen] = useState(false);
   const [pendingImageCommand, setPendingImageCommand] = useState<ImageCommand | null>(null);
@@ -124,6 +124,7 @@ const TextEditor: React.FC<EditorProps> = ({
         hideLabel={true}
         role="textbox"
         aria-multiline="true"
+        {...textAreaProps}
       />
 
       <Card

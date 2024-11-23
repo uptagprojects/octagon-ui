@@ -28,7 +28,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 0px;
+    padding: 0px;
 }
 
 .oct-navbar__header-wrapper {

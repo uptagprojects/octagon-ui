@@ -295,10 +295,83 @@ blockquote {
   font-family: var(--font-mono), monospace;
 }
 
+ul li {
+  font-size: 1em;
+  line-height: 1.75em;
+}
+
 a {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: var(--size-1);
-  text-underline-offset: var(--size-2);
+  text-underline-offset: var(--size-1);
   text-decoration-color: var(--accent-color);
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a > .lucide {
+  height: 1em;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: var(--body-background-color);
+  overflow: hidden;
+  width: 100%;
+  table-layout: auto;
+  border-radius: var(--border-radius);
+}
+
+
+thead {
+  background: var(--orange-200);
+  color: var(--orange-700);
+}
+
+tr {
+  text-align: left;
+}
+
+tr th, tr td {
+  padding: var(--scale-3);
+}
+
+tr td {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+
+tr > td:last-child {
+  max-width: 50%;
+}
+
+tr:last-of-type td {
+  border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  thead {
+    background: var(--gray-700);
+    color: var(--gray-100);
+  }
+
+  tr td {
+    border-bottom: 1px solid var(--gray-700);
+  }
+}
+
+body[data-theme="dark"] thead {
+  background: var(--gray-700);
+  color: var(--gray-100);
+}
+
+body[data-theme="dark"] tr td {
+  border-bottom: 1px solid var(--gray-700);
 }

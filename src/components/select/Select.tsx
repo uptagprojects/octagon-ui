@@ -1,5 +1,5 @@
 import { icons, LucideChevronDown } from "lucide-react";
-import { SelectHTMLAttributes, useMemo } from "react";
+import { SelectHTMLAttributes, useId, useMemo } from "react";
 import "./Select.css";
 
 interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> {
@@ -10,7 +10,7 @@ interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "siz
     size?: "small" | "medium" | "large"
 }
 const Select: React.FC<SelectProps> = ({ label, hideLabel, icon, size="medium", disabled, children, errorMessage, ...props }) => {
-    const inputId = useMemo(() => globalThis.crypto.randomUUID(), []);
+    const inputId = useId();
     const LucideIcon = icons[icon as keyof typeof icons];
     return (
         <div className={`oct-select oct-select--${size} ${hideLabel ? 'oct-select--hide-label' : ''} ${icon ? "oct-select--has-icon" : ""} ${disabled ? 'oct-select--disabled' : ''} ${errorMessage ? "oct-select--has-error" : ""}`}>

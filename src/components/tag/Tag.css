@@ -1,8 +1,9 @@
 .oct-tag {
-    --tag-color: var(--orange-500);
+    --tag-color: var(--orange-400);
+    --tag-text-color: var(--orange-800);
     padding: var(--scale-1) .75em;
     border-radius: calc(var(--border-radius) * 2);
-    color: var(--tag-color);
+    color: var(--tag-text-color);
     font-weight: 600;
     font-size: 0.75em;
     border: 2px solid var(--tag-color);
@@ -11,7 +12,23 @@
     justify-content: center;
     align-items: center;
     gap: calc(1em / 2);
+    background-color: var(--tag-color);
+}
+
+.oct-tag--outline {
     background-color: transparent;
+    color: var(--tag-text-color);
+    border: 2px solid var(--tag-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    .oct-tag--outline {
+        color: var(--tag-color);
+    }
+}
+
+body[data-theme="dark"] .oct-tag--outline {
+    color: var(--tag-color);
 }
 
 .oct-tag > svg {
