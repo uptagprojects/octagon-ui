@@ -1,7 +1,6 @@
 import React, { InputHTMLAttributes, useCallback, useRef, useState } from 'react';
 import { TextEditorToolbar } from './TextEditorToolbar';
-import remarkGfm from 'remark-gfm';
-import { PluggableList } from 'unified';
+
 import {
   BoldCommand,
   ItalicCommand,
@@ -26,7 +25,7 @@ import "./TextEditor.css";
 interface EditorProps extends Omit<InputHTMLAttributes<HTMLTextAreaElement>, "onChange" | "size"> {
   value: string;
   onChange: (value: string) => void;
-  uploadRequest?: (file: File) => Promise<string>;
+  uploadRequest?: (file: File, blobUrl: string) => void | Promise<void>;
 }
 
 const TextEditor: React.FC<EditorProps> = ({ 
@@ -86,9 +85,7 @@ const TextEditor: React.FC<EditorProps> = ({
 
     let imageFileURL = URL.createObjectURL(imageFile);
 
-    uploadRequest?.(imageFile).then((url) => {
-      onChange(value.replace(imageFileURL, url));
-    });
+    uploadRequest?.(imageFile, imageFileURL);
 
     const { text, newSelection } = pendingImageCommand.execute(
       value,
